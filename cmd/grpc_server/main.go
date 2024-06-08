@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/brianvoe/gofakeit"
 	"github.com/golang/protobuf/ptypes/empty"
 	desc "github.com/passsquale/chat-server/pkg/chat_v1"
 	"google.golang.org/grpc"
@@ -20,7 +19,7 @@ type server struct {
 
 func (s *server) Create(ctx context.Context, req *desc.CreateRequest) (*desc.CreateResponse, error) {
 	log.Printf("Create chat: %v", req.GetUsernames())
-	return &desc.CreateResponse{Id: gofakeit.Int64()}, nil
+	return &desc.CreateResponse{Id: 111}, nil
 }
 
 func (s *server) Delete(ctx context.Context, req *desc.DeleteRequest) (*empty.Empty, error) {
