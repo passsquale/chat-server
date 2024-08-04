@@ -1,2 +1,7 @@
 .idea
 /bin/
+local.env
+prod.env
+.vscode
+coverage.out
+vendor.protogen/

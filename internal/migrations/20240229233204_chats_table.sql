@@ -1,17 +1,21 @@
 -- +goose Up
-CREATE TABLE chat (
+-- +goose StatementBegin
+CREATE TABLE chats (
     id SERIAL PRIMARY KEY,
     usernames TEXT[]
 );
 
-CREATE TABLE message (
+CREATE TABLE messages (
     id SERIAL PRIMARY KEY,
     chat_id INTEGER NOT NULL,
     author TEXT NOT NULL,
     content TEXT NOT NULL,
     created_at TIMESTAMP
 );
+-- +goose StatementEnd
 
 -- +goose Down
-DROP TABLE chat;
-DROP TABLE message;
+-- +goose StatementBegin
+DROP DATABASE chats;
+DROP DATABASE messages;
+-- +goose StatementEnd
